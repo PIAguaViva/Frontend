@@ -1,0 +1,22 @@
+.login-font{
+  font-weight: 'bold';
+}
+
+.login-bg{
+  background-image: url("../../assets/gif/loginBg.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vh;
+  min-height: calc(100vh - 245.75px);
+
+}
+
+.button{
+  background-color: #3424ad !important;
+  color: white !important;
+}
+
+.text-decorator-none{
+  text-decoration: none !important;
+}

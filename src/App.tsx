@@ -1,5 +1,8 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+
+import AboutUs from './pages/aboutUs/AboutUs';
+import Login from './pages/login/Login';
 import Home from './pages/home/Home';
 import Navbar from './components/static/navbar/Navbar';
 import Footer from './components/static/footer/Footer';
@@ -12,10 +15,17 @@ function App() {
       <Switch>
         <div>
           <Route exact path="/">
-            <Home></Home>
+            <Login />
+          </Route>
+          <Route path="/login">
+            <Login />
           </Route>
           <Route path='/home'>
             <Home />
+          </Route>
+         
+          <Route path="/about-us">
+            <AboutUs />
           </Route>
         </div>
       </Switch>

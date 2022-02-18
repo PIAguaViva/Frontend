@@ -14,6 +14,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -117,8 +118,15 @@ export default function Navbar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <Link to="/about-us">
+      <MenuItem onClick={handleMenuClose}>Sobre nós</MenuItem>
+      </Link>
+      <Link to="/login">
+      <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
+      </Link>
+      <Link to='/home'>
+      <MenuItem onClick={handleMenuClose}>Home</MenuItem>
+      </Link>
     </Menu>
   );
 
@@ -160,12 +168,12 @@ export default function Navbar() {
         </IconButton>
         <p>Profile</p>
       </MenuItem>
-    </Menu>
+    </Menu >
   );
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar position="static" style={{background: '#5BBEFA'}}>
         <Toolbar>
           <IconButton
             edge="start"
