@@ -7,6 +7,7 @@ import Home from './pages/home/Home';
 import Navbar from './components/static/navbar/Navbar';
 import Footer from './components/static/footer/Footer';
 import './App.css';
+import CadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
 
 function App() {
   return (
@@ -22,6 +23,10 @@ function App() {
           </Route>
           <Route path='/home'>
             <Home />
+          </Route>
+
+          <Route path='/cadastrousuario'>
+            <CadastroUsuario />
           </Route>
          
           <Route path="/about-us">
