@@ -6,6 +6,7 @@ import Login from './pages/login/Login';
 import Home from './pages/home/Home';
 import Navbar from './components/static/navbar/Navbar';
 import Footer from './components/static/footer/Footer';
+import Contato from './pages/contato/Contato';
 import './App.css';
 import CadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
 
@@ -31,6 +32,9 @@ function App() {
          
           <Route path="/about-us">
             <AboutUs />
+          </Route>
+          <Route path='/contato'>
+            <Contato />
           </Route>
         </div>
       </Switch>

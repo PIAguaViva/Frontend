@@ -127,6 +127,9 @@ export default function Navbar() {
       <Link to='/home'>
       <MenuItem onClick={handleMenuClose}>Home</MenuItem>
       </Link>
+      <Link to='/contato'>
+      <MenuItem onClick={handleMenuClose}>Contato</MenuItem>
+      </Link>
     </Menu>
   );
 
