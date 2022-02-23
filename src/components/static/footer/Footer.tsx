@@ -8,7 +8,7 @@ function Footer (){
         <>
          <Grid container direction="row" justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item xs={12}>
-                    <Box className='redes' style={{ backgroundColor: "#5BBEFA", height: "120px" }}>
+                    <Box className='redes'>
                         <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
                             <Typography variant="h5" align="center" gutterBottom style={{ color:"white" }} className='textos'>Siga-nos nas redes sociais </Typography>
                         </Box>

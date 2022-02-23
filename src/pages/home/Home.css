@@ -1,8 +1,19 @@
 .homeBg{
   background-image: url(https://www.animatedimages.org/data/media/1513/animated-sea-and-ocean-image-0008.gif);
   background-repeat: no-repeat;
+  width: 100vw;
+  min-height: calc(100vh - 245.75px);
   background-size: cover;
   background-position: center;
-  width: 100vh;
-  min-height: calc(100vh - 245.75px);
+}
+
+.card{
+  background: linear-gradient(36deg, #1a71a490 8%, #ce455e90 89%);
+}
+
+.button{
+  margin-top: 20px!important;
+  border-color: white!important;
+  background-color: #3F51B5!important;
+  color: white!important;
 }

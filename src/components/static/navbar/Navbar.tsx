@@ -176,7 +176,7 @@ export default function Navbar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static" style={{background: '#5BBEFA'}}>
+      <AppBar position="static" style={{background: 'linear-gradient(36deg, #1a71a490 8%, #ce455e90 89%)'}}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -243,4 +243,3 @@ export default function Navbar() {
     </div>
   );
 }
-

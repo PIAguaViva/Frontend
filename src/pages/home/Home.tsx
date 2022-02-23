@@ -6,16 +6,16 @@ import './Home.css';
 function Home() {
   return (
     <>
-        <Grid className='homeBg' container direction="row" justifyContent="flex-start" alignItems="center" style={{ backgroundColor: "#3F51B5" }}>
+        <Grid className='homeBg' container direction="row" justifyContent="center" alignItems="center" style={{ backgroundColor: "#3F51B5" }}>
                 <Grid alignItems="center" item xs={6}>
-                    <Box paddingX={20} >
-                        <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ color: "white", fontWeight: "bold" }}>Seja bem vinde!</Typography>
-                        <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" style={{ color: "white", fontWeight: "bold" }}>sinta-se à vontade para expressar os seus pensamentos e opiniões!</Typography>
+                    <Box className='card' paddingX={10} width={340} height="35vh" borderRadius={5} marginTop={12} paddingTop={12} >
+                        <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ color: "white", fontWeight: "bold" }}>Seja bem vindo!</Typography>
+                        <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" style={{ color: "white", fontWeight: "bold" }}>Sinta-se à vontade para expressar os seus pensamentos e opiniões!</Typography>
                     </Box>
                     <Box display="flex" justifyContent="center">
                         <Box marginRight={1}>
                         </Box>
-                        <Button variant="outlined" style={{ borderColor: "white", backgroundColor: "#3F51B5", color: "white" }}>Ver Postagens</Button>
+                        <Button variant="outlined" className='button'>Ver Postagens</Button>
                     </Box>
                 </Grid>
                 {/* <Grid item xs={6} >

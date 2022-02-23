@@ -1,4 +1,9 @@
 .rodape{
-  background-color: #5BBEFA;
+  background: linear-gradient(36deg, #1a71a490 8%, #ce455e90 89%)!important;
   color: white;
+}
+
+.redes{
+  background: linear-gradient(36deg, #1a71a490 8%, #ce455e90 89%)!important;
+  height: 120px!important;
 }
