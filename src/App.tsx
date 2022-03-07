@@ -10,6 +10,7 @@ import Contato from './pages/contato/Contato';
 import './App.css';
 import CadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
 import ListaTema from './components/temas/listatema/ListaTema';
+import CadastroTema from './components/temas/cadastroTema/CadastroTema';
 
 function App() {
   return (
@@ -39,6 +40,13 @@ function App() {
           <Route path='/contato'>
             <Contato />
           </Route>
+          <Route exact path='/formularioTema'>
+            <CadastroTema />
+          </Route>
+          <Route exact path='/formularioTema/:id'>
+            <CadastroTema />
+          </Route>
+
         </div>
       </Switch>
       <Footer />
