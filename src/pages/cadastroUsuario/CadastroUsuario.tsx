@@ -1,5 +1,5 @@
-import React, {ChangeEvent, useEffect, useState} from 'react';
-import {Box, Button, Grid, TextField, Typography  } from '@material-ui/core';
+import React, { ChangeEvent, useEffect, useState } from 'react';
+import { Box, Button, Grid, TextField, Typography } from '@material-ui/core';
 import { Link, useHistory } from 'react-router-dom';
 
 import './CadastroUsuario.css';
@@ -8,7 +8,7 @@ import User from '../../models/User';
 
 function CadastroUsuario() {
     let history = useHistory();
-    const [confirmarSenha,setConfirmarSenha] = useState<String>("")
+    const [confirmarSenha, setConfirmarSenha] = useState<String>("")
     const [user, setUser] = useState<User>(
         {
             id: 0,
@@ -34,7 +34,7 @@ function CadastroUsuario() {
     }, [userResult])
 
 
-    function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>){
+    function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>) {
         setConfirmarSenha(e.target.value)
     }
 
@@ -49,41 +49,79 @@ function CadastroUsuario() {
     }
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if(confirmarSenha === user.senha && user.senha.length >= 8){
-        cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-        alert('Usuario cadastrado com sucesso')
-        }else{
+        if (confirmarSenha === user.senha && user.senha.length >= 8) {
+            cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
+            alert('Usuario cadastrado com sucesso')
+        } else {
             alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
         }
     }
 
     return (
-        <Grid container direction='row' justifyContent='center' alignItems='center'>
-            <Grid item xs={6} className='imagem2'></Grid>
-            <Grid item xs={6} alignItems='center'>
-                <Box paddingX={10}>
-                    <form onSubmit={onSubmit} >
-                        <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2'>Cadastrar</Typography>
-                        <TextField value={user.tipoUsuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='tipoUsuario' label='tipoUsuario' variant='outlined' name='tipoUsuario' margin='normal' fullWidth required />
-                        <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='nome' variant='outlined' name='nome' margin='normal' fullWidth required />
-                        <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal'fullWidth required placeholder='Exemplo: user@email.com'/>
-                        <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth required placeholder='Mínimo 8 caracteres'/>
-                        <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='confirmarSenha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth required placeholder='Mínimo 8 caracteres' />
-                        <Box marginTop={2} textAlign='center'>
-                            <Link to='/login' className='text-decorator-none'>
-                                <Button variant='contained' color='secondary' className='btnCancelar'>
-                                    Cancelar
-                                </Button>
-                            </Link>
-                            <Button type='submit' variant='contained' color='primary'>
-                                    Cadastrar
-                            </Button>
+        (
+            <Grid container className='LogBG2'>
+
+                <Box className='caixaMain'>
+                    <Box className='cadastroBG'>
+                        <Box display='flex' justifyContent='center' marginTop={2}>
                         </Box>
-                    </form>
+                    </Box>
+                    <Box className='caixaCad'>
+                        <form onSubmit={onSubmit} className='formCad' >
+                            <Typography variant='h4' className='titleCad'>Cadastrar</Typography>
+                            <TextField value={user.tipoUsuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                                id='tipoUsuario'
+                                label='tipoUsuario'
+                                name='tipoUsuario'
+                                margin='normal'
+                                required />
+
+                            <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                                id='nome'
+                                label='nome'
+                                name='nome'
+                                margin='normal'
+                                required />
+
+                            <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                                id='usuario'
+                                label='usuario'
+                                name='usuario'
+                                margin='normal'
+                                required placeholder='Exemplo: user@email.com' />
+
+                            <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                                id='senha'
+                                label='senha'
+                                name='senha'
+                                margin='normal'
+                                type='password'
+                                required placeholder='Mínimo 8 caracteres' />
+
+                            <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
+                                id='confirmarSenha'
+                                label='confirmarSenha'
+                                name='confirmarSenha'
+                                margin='normal'
+                                type='password'
+                                required placeholder='Mínimo 8 caracteres' />
+
+                            <Box marginTop={2} textAlign='center'>
+                                <Link to='/login' className='text-decorator-none'>
+                                    <Button variant='contained' color='secondary' className='btnCancelar'>
+                                        Cancelar
+                                    </Button>
+                                </Link>
+                                <Button type='submit' variant='contained' color='primary'>
+                                    Cadastrar
+                                </Button>
+                            </Box>
+                        </form>
+                    </Box>
                 </Box>
             </Grid>
-        </Grid>
-    );
+        )
+    )
 }
 
 export default CadastroUsuario;

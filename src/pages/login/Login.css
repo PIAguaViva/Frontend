@@ -1,22 +1,56 @@
-.login-font{
-  font-weight: 'bold';
-}
-
-.login-bg{
-  background-image: url("../../assets/gif/loginBg.gif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100vh;
-  min-height: calc(100vh - 245.75px);
-
-}
-
-.button{
-  background-color: #3424ad !important;
-  color: white !important;
-}
-
 .text-decorator-none{
   text-decoration: none !important;
+}
+
+.LogBG{
+  background-image: url(../../assets/gif/loginBG.gif);
+  background-size: 100% 100%;
+  background-position: center;
+  min-height: 500px;
+  min-width: 500px;
+  border-radius: 0 10px 10px 0;
+  padding: 0;
+  box-shadow: 10px 5px 5px rgb(185, 94, 132);
+}
+.caixaMain{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+
+}
+
+.caixaLog{
+  background-color: white;
+  min-height: 500px;
+  width: 350px;
+  border-radius: 10px 0px 0px 10px;
+  box-shadow: 10px 5px 5px rgb(185, 94, 132);
+}
+
+.testeLogin{
+  height: 100%;
+
+}
+
+.form{
+  padding: 15%!important;
+}
+
+.form-title{
+  font-weight: bold!important;
+  text-align: center!important;
+  margin-top: 25px!important;
+}
+
+.form-input{
+  width: 90%;
+}
+
+.form-title{
+  font-weight: bold;
+  color: black;
 }

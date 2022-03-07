@@ -1,16 +1,48 @@
-.imagem2{
-  background-image: url(https://i.imgur.com/d5bMdDJ.jpg);
-  background-repeat: no-repeat;
-  width: 100vh;
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center;
-}
-
 .textos2{
   font-weight: bold !important;
 }
 
 .btnCancelar{
   margin-right: 20px !important;
+}
+
+.botao{
+  background-color: #85ADC9!important;
+}
+.caixaMain{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+
+}
+
+.caixaCad{
+  background-color: white;
+  min-height: 500px;
+  width: 350px;
+  border-radius: 0px 10px 10px 0px;
+  box-shadow: 10px 5px 5px rgb(185, 94, 132);
+}
+
+.cadastroBG{
+  background-image: url(../../assets/gif/cadastroBG.gif);
+  background-size: 100% 100%;
+  background-position: center;
+  min-height: 500px;
+  min-width: 500px;
+  border-radius: 10px 0px 0px 10px;
+  padding: 0;
+  box-shadow: 10px 5px 5px rgb(185, 94, 132);
+}
+
+.formCad{
+  margin: 15px;
+}
+
+.titleCad{
+  font-weight: bold!important;
 }
