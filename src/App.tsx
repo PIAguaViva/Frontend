@@ -18,7 +18,7 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
-        <div>
+        <div style={{ minHeight:"100vh"}}>
           <Route exact path="/">
             <Login />
           </Route>
@@ -50,6 +50,7 @@ function App() {
           <Route path='/deletarTema/:id'>
             <DeletarTema />
           </Route>
+
 
         </div>
       </Switch>

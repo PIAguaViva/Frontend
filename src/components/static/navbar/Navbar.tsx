@@ -130,6 +130,12 @@ export default function Navbar() {
       <Link to='/contato'>
       <MenuItem onClick={handleMenuClose}>Contato</MenuItem>
       </Link>
+      <Link to='/temas'>
+      <MenuItem onClick={handleMenuClose}>Temas</MenuItem>
+      </Link>
+      <Link to='/formularioTema'>
+      <MenuItem onClick={handleMenuClose}>Cadastrar Tema</MenuItem>
+      </Link>
     </Menu>
   );
 
