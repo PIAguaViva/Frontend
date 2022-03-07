@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import AboutUs from './pages/aboutUs/AboutUs';
 import Login from './pages/login/Login';
@@ -9,6 +9,7 @@ import Footer from './components/static/footer/Footer';
 import Contato from './pages/contato/Contato';
 import './App.css';
 import CadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
+import ListaTema from './components/temas/listatema/ListaTema';
 
 function App() {
   return (
@@ -25,11 +26,13 @@ function App() {
           <Route path='/home'>
             <Home />
           </Route>
-
+          <Route path='/temas'>
+            <ListaTema />
+          </Route>
           <Route path='/cadastrousuario'>
             <CadastroUsuario />
           </Route>
-         
+
           <Route path="/about-us">
             <AboutUs />
           </Route>
@@ -39,11 +42,11 @@ function App() {
         </div>
       </Switch>
       <Footer />
-      
+
     </Router>
-    
-    
-    
+
+
+
   );
 }
 
