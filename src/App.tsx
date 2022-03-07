@@ -11,6 +11,7 @@ import './App.css';
 import CadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
 import ListaTema from './components/temas/listatema/ListaTema';
 import CadastroTema from './components/temas/cadastroTema/CadastroTema';
+import DeletarTema from './components/temas/deletarTema/DeletarTema';
 
 function App() {
   return (
@@ -45,6 +46,9 @@ function App() {
           </Route>
           <Route exact path='/formularioTema/:id'>
             <CadastroTema />
+          </Route>
+          <Route path='/deletarTema/:id'>
+            <DeletarTema />
           </Route>
 
         </div>
