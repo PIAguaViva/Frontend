@@ -154,7 +154,7 @@ export default function Navbar() {
         <Link to="/about-us">
           <MenuItem onClick={handleMenuClose}>Sobre nós</MenuItem>
         </Link>
-        <Link to="/login">
+        <Link to="/login" onClick={goLogout}>
           <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
         </Link>
         <Link to='/home'>
