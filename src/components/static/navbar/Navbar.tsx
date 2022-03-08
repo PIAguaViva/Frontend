@@ -14,7 +14,27 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/TokensReducer';
+import { addToken } from '../../../store/tokens/Actions';
+
+
+
+export default function Navbar() {
+
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+)
+let history = useHistory();
+const dispatch = useDispatch();
+
+function goLogout(){
+  dispatch(addToken(''));
+  alert("Usuário deslogado")
+  history.push('/login')
+}
+var navbarComponent;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -82,31 +102,35 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function Navbar() {
-  const classes = useStyles();
+const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null);
 
+  
+
+
+if(token != ""){
+  
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
+  
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
-
+  
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
-
+  
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
   };
-
+  
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
-
+  
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -138,7 +162,7 @@ export default function Navbar() {
       </Link>
     </Menu>
   );
-
+  
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
     <Menu
@@ -180,72 +204,78 @@ export default function Navbar() {
     </Menu >
   );
 
+navbarComponent = 
+
+  <div className={classes.grow}>
+  <AppBar position="static" style={{background: 'linear-gradient(36deg, #1a71a490 8%, #ce455e90 89%)'}}>
+    <Toolbar>
+      <IconButton
+        edge="start"
+        className={classes.menuButton}
+        color="inherit"
+        aria-label="open drawer"
+      >
+        <MenuIcon />
+      </IconButton>
+      <Typography className={classes.title} variant="h6" noWrap>
+        Água-Viva
+      </Typography>
+      <div className={classes.search}>
+        <div className={classes.searchIcon}>
+          <SearchIcon />
+        </div>
+        <InputBase
+          placeholder="Search…"
+          classes={{
+            root: classes.inputRoot,
+            input: classes.inputInput,
+          }}
+          inputProps={{ 'aria-label': 'search' }}
+        />
+      </div>
+      <div className={classes.grow} />
+      <div className={classes.sectionDesktop}>
+        <IconButton aria-label="show 4 new mails" color="inherit">
+          <Badge badgeContent={0} color="secondary">
+            <MailIcon />
+          </Badge>
+        </IconButton>
+        <IconButton aria-label="show 17 new notifications" color="inherit">
+          <Badge badgeContent={0} color="secondary">
+            <NotificationsIcon />
+          </Badge>
+        </IconButton>
+        <IconButton
+          edge="end"
+          aria-label="account of current user"
+          aria-controls={menuId}
+          aria-haspopup="true"
+          onClick={handleProfileMenuOpen}
+          color="inherit"
+        >
+          <AccountCircle />
+        </IconButton>
+      </div>
+      <div className={classes.sectionMobile}>
+        <IconButton
+          aria-label="show more"
+          aria-controls={mobileMenuId}
+          aria-haspopup="true"
+          onClick={handleMobileMenuOpen}
+          color="inherit"
+        >
+          <MoreIcon />
+        </IconButton>
+      </div>
+    </Toolbar>
+  </AppBar>
+  {renderMobileMenu}
+  {renderMenu}
+</div>
+}
   return (
-    <div className={classes.grow}>
-      <AppBar position="static" style={{background: 'linear-gradient(36deg, #1a71a490 8%, #ce455e90 89%)'}}>
-        <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            Água-Viva
-          </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={0} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={0} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-          </div>
-          <div className={classes.sectionMobile}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </div>
-        </Toolbar>
-      </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
-    </div>
+    <>
+   {navbarComponent}
+   </>
   );
 }
