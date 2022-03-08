@@ -13,6 +13,7 @@ import ListaTema from './components/temas/listatema/ListaTema';
 import CadastroTema from './components/temas/cadastroTema/CadastroTema';
 import DeletarTema from './components/temas/deletarTema/DeletarTema';
 import ListaPostagem from './components/postagens/listaPostagem/ListaPostagem';
+import CadastroPost from './components/postagens/cadastroPost/CadastroPost';
 
 function App() {
   return (
@@ -35,6 +36,12 @@ function App() {
           <Route path='/posts'>
               <ListaPostagem />
             </Route>
+            <Route exact path='/formularioPostagem'>
+            <CadastroPost />
+          </Route>
+          <Route exact path='/formularioPostagem/:id'>
+            <CadastroPost />
+          </Route>
           <Route path='/cadastrousuario'>
             <CadastroUsuario />
           </Route>
