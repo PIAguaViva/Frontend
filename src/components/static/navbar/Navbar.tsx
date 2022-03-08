@@ -18,7 +18,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/TokensReducer';
 import { addToken } from '../../../store/tokens/Actions';
-import { toast } from 'react-toastify';
+
+
 
 export default function Navbar() {
 
@@ -30,16 +31,7 @@ export default function Navbar() {
 
   function goLogout() {
     dispatch(addToken(''));
-    toast.info('Usuário deslogado', {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: false,
-      theme: "colored",
-      progress: undefined,
-    });
+    alert("Usuário deslogado")
     history.push('/login')
   }
   var navbarComponent;
@@ -53,7 +45,6 @@ export default function Navbar() {
         marginRight: theme.spacing(2),
       },
       title: {
-        color:'#ffffff',
         display: 'none',
         [theme.breakpoints.up('sm')]: {
           display: 'block',
@@ -154,9 +145,6 @@ export default function Navbar() {
         <Link to="/about-us">
           <MenuItem onClick={handleMenuClose}>Sobre nós</MenuItem>
         </Link>
-        <Link to="/login" onClick={goLogout}>
-          <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
-        </Link>
         <Link to='/home'>
           <MenuItem onClick={handleMenuClose}>Home</MenuItem>
         </Link>
@@ -168,6 +156,9 @@ export default function Navbar() {
         </Link>
         <Link to='/formularioTema'>
           <MenuItem onClick={handleMenuClose}>Cadastrar Tema</MenuItem>
+        </Link>
+        <Link to="/login" onClick={goLogout}>
+          <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
         </Link>
       </Menu>
     );
@@ -226,11 +217,9 @@ export default function Navbar() {
             >
               <MenuIcon />
             </IconButton>
-            <Link to='/home' className='text-decorator-none'>
             <Typography className={classes.title} variant="h6" noWrap>
               Água-Viva
             </Typography>
-            </Link>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
