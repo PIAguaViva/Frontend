@@ -34,21 +34,18 @@ function AboutUs() {
     <Grid item xs={4} className='alinhar'>
       <div id="passar_mouse">
         <img src="https://i.imgur.com/hpDV5Oz.png" width="150" height="150"/>      
-      <div id="mostrar">Scarlatt, está em 24 anos e ama ficção científica, é uma pessoa não binária, que desmontava equipamentos e brinquedos quando criança para descobrir como funcionavam e esse foi um dos motivos para seguir na área tech. Consegue conversar em inglês e está aprendendo alemão. Comunicative, proative, persistente que ama desafios e planejar soluções. Está formade como desenvolvedore Java FullStack pela Generation Brasil e está a procura de uma oportunidade na área tech.</div></div>
+      <div id="mostrar">Scarlatt, com 24 anos e ama ficção científica. Uma pessoa não binária. Desmontou eletrônicos e brinquedos quando menor para descobrir como funcionavam. Fala inglês, é comunicative, proative, ama desafios e planejar soluções. Desenvolvedore Java FullStack em busca de uma oportunidade na área tech.</div></div>
       </Grid>
       <Grid item xs={4} className='alinhar'> 
       <div id="passar_mouse">
         <img src="https://i.imgur.com/srrPksO.png" width="150" height="150"/>      
-      <div id="mostrar">Olá! Eu sou a Vicky, tenho 23 anos e sou extremamente curiosa, brincalhona, calma e que gosta de ajudar e ver as pessoas felizes. Tenho uma enorme paixão por tecnologia e trabalhar nesse projeto, além de aumentar isso, me proporcionou adquirir habilidades e conhecimentos, que com certeza me ajudarão nessa nova jornada!</div></div>
+      <div id="mostrar">Olá! Eu sou a Vicky, tenho 23 anos e sou extremamente curiosa, brincalhona, calma e que gosta de ajudar. Tenho uma enorme paixão por tecnologia e trabalhar nesse projeto, além de aumentar isso, me proporcionou adquirir habilidades e conhecimentos, que com certeza me ajudarão nessa nova jornada!</div></div>
       </Grid>
       <Grid item xs={4} className='alinhar'>
       <div id="passar_mouse">
         <img src="https://i.imgur.com/aFMXsKS.png" width="150" height="150"/>      
       <div id="mostrar">Sabrina Moura Gandra, 21 anos residente de Guarulhos, gosta de pinta quadros e ir ao teatro/cinema, é estudante de Análise e Desenvolvimento de Sistemas. Ingressou na área de tecnologia recentemente motivada pela curiosidade e objetivo de proporcionar uma melhor experiêcia ao cliente.</div></div>
       </Grid>
-
-    
-    
       <Grid item xs={3} className='alinhar'>
       <div id="passar_mouse">
         <img src="https://i.imgur.com/VWdWENY.png" width="150" height="150"/>      
