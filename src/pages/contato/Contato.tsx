@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from "react";
 import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import "./Contato.css";
 import { toast } from "react-toastify";
@@ -16,24 +16,32 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault();
-
-        toast.success("E-mail enviado!", {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        theme: "colored",
-        progress: undefined,
-    });
-    
-  }
 
 export default function Contato() {
+  let history = useHistory();
   const classes = useStyles();
+   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+    
+    e.preventDefault()
+        await toast.success("E-mail enviado!", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+      });
+     
+      back();
+    }
+  
+    function back() {
+      history.push('/home')
+  }
+
+  
 
   return (
     <Grid container direction="row" justifyContent="flex-end" alignItems="flex-end">
@@ -77,7 +85,7 @@ export default function Contato() {
               rows={4}
               variant="outlined"
             />
-          </form>
+          
           <Box marginTop={2} textAlign="center">
             <Link to="/home" className="text-decorator-none">
               <Button
@@ -88,11 +96,15 @@ export default function Contato() {
                 Cancelar
               </Button>
             </Link>
+            <Link to="/home">
             <Button type="submit" variant="contained" color="primary">
               Enviar
             </Button>
+            </Link>
           </Box>
+          </form>
         </Box>
+        
       </Grid>
     </Grid>
   );
