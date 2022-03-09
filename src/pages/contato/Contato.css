@@ -1,9 +1,37 @@
-.imagem3{
+.caixaLog1{
+    background-color: white;
+    min-height: 50px;
+    width: 50px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 10px 5px 5px rgb(185, 94, 132);
+  }
 
-    background-image: url("../../assets/gif/bg.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 100vh;
-    min-height: calc(100vh - 245.75px);
+.caixaLog2{
+    background-color: #ffffff;
+    min-height: 100px;
+    width: 30px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 10px 5px 5px rgb(185, 94, 132);
+  }
+
+  .titulo2{
+      color: white;
+      margin-top: 200px;
+  }
+
+  .maps{
+    width: 600px;
+    height: 320px; 
+    list-style-position: border; 
+    align-content: flex-end;
+    box-shadow: 10px 5px 5px rgb(185, 94, 132);
+    margin-top: 80px;
+
+  }
+
+  .titulo3{
+    margin-top: 80px;
 }
+  
+
+  
