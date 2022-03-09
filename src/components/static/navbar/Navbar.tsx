@@ -1,291 +1,92 @@
 import React from 'react';
-import { alpha, makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
-import Badge from '@material-ui/core/Badge';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import MoreIcon from '@material-ui/icons/MoreVert';
-import { Link, useHistory } from 'react-router-dom';
+import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import './Navbar.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/TokensReducer';
 import { addToken } from '../../../store/tokens/Actions';
-import {toast} from 'react-toastify';
+import {toast} from 'react-toastify'
 
+function Navbar() {
 
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    )
+    let history = useHistory();
+    const dispatch = useDispatch();
 
-export default function Navbar() {
+    function goLogout() {
+        dispatch(addToken(''))
+        toast.info("Usuário deslogado", {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        });
+        history.push('/login')
+    }
 
-  const token = useSelector<TokenState, TokenState["tokens"]>(
-    (state) => state.tokens
-  )
-  let history = useHistory();
-  const dispatch = useDispatch();
+    var navbarComponent;
 
-  function goLogout() {
-    dispatch(addToken(''));
-    toast.info('Usuário deslogado', {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: false,
-      theme: "colored",
-      progress: undefined,
-  });
-    history.push('/login')
-  }
-  var navbarComponent;
-
-  const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-      grow: {
-        flexGrow: 1,
-      },
-      menuButton: {
-        marginRight: theme.spacing(2),
-      },
-      title: {
-        display: 'none',
-        [theme.breakpoints.up('sm')]: {
-          display: 'block',
-        },
-      },
-      search: {
-        position: 'relative',
-        borderRadius: theme.shape.borderRadius,
-        backgroundColor: alpha(theme.palette.common.white, 0.15),
-        '&:hover': {
-          backgroundColor: alpha(theme.palette.common.white, 0.25),
-        },
-        marginRight: theme.spacing(2),
-        marginLeft: 0,
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-          marginLeft: theme.spacing(3),
-          width: 'auto',
-        },
-      },
-      searchIcon: {
-        padding: theme.spacing(0, 2),
-        height: '100%',
-        position: 'absolute',
-        pointerEvents: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
-      inputRoot: {
-        color: 'inherit',
-      },
-      inputInput: {
-        padding: theme.spacing(1, 1, 1, 0),
-        // vertical padding + font size from searchIcon
-        paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-        transition: theme.transitions.create('width'),
-        width: '100%',
-        [theme.breakpoints.up('md')]: {
-          width: '20ch',
-        },
-      },
-      sectionDesktop: {
-        display: 'none',
-        [theme.breakpoints.up('md')]: {
-          display: 'flex',
-        },
-      },
-      sectionMobile: {
-        display: 'flex',
-        [theme.breakpoints.up('md')]: {
-          display: 'none',
-        },
-      },
-    }),
-  );
-
-  const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null);
-
-
-
-
-  if (token != "") {
-
-    const isMenuOpen = Boolean(anchorEl);
-    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-    const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-      setAnchorEl(event.currentTarget);
-    };
-
-    const handleMobileMenuClose = () => {
-      setMobileMoreAnchorEl(null);
-    };
-
-    const handleMenuClose = () => {
-      setAnchorEl(null);
-      handleMobileMenuClose();
-    };
-
-    const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-      setMobileMoreAnchorEl(event.currentTarget);
-    };
-
-    const menuId = 'primary-search-account-menu';
-    const renderMenu = (
-      <Menu
-        anchorEl={anchorEl}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        id={menuId}
-        keepMounted
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        open={isMenuOpen}
-        onClose={handleMenuClose}
-      >
-        <Link to="/about-us">
-          <MenuItem onClick={handleMenuClose}>Sobre nós</MenuItem>
-        </Link>
-        <Link to='/home'>
-          <MenuItem onClick={handleMenuClose}>Home</MenuItem>
-        </Link>
-        <Link to='/contato'>
-          <MenuItem onClick={handleMenuClose}>Contato</MenuItem>
-        </Link>
-        <Link to='/temas'>
-          <MenuItem onClick={handleMenuClose}>Temas</MenuItem>
-        </Link>
-        <Link to='/formularioTema'>
-          <MenuItem onClick={handleMenuClose}>Cadastrar Tema</MenuItem>
-        </Link>
-        <Link to="/login" onClick={goLogout}>
-          <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
-        </Link>
-      </Menu>
-    );
-
-    const mobileMenuId = 'primary-search-account-menu-mobile';
-    const renderMobileMenu = (
-      <Menu
-        anchorEl={mobileMoreAnchorEl}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        id={mobileMenuId}
-        keepMounted
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        open={isMobileMenuOpen}
-        onClose={handleMobileMenuClose}
-      >
-        <MenuItem>
-          <IconButton aria-label="show 4 new mails" color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <MailIcon />
-            </Badge>
-          </IconButton>
-          <p>Messages</p>
-        </MenuItem>
-        <MenuItem>
-          <IconButton aria-label="show 11 new notifications" color="inherit">
-            <Badge badgeContent={11} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-          <p>Notifications</p>
-        </MenuItem>
-        <MenuItem onClick={handleProfileMenuOpen}>
-          <IconButton
-            aria-label="account of current user"
-            aria-controls="primary-search-account-menu"
-            aria-haspopup="true"
-            color="inherit"
-          >
-            <AccountCircle />
-          </IconButton>
-          <p>Profile</p>
-        </MenuItem>
-      </Menu >
-    );
-
-    navbarComponent =
-
-      <div className={classes.grow}>
-        <AppBar position="static" style={{ background: 'linear-gradient(36deg, #1a71a490 8%, #ce455e90 89%)' }}>
-          <Toolbar>
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="open drawer"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography className={classes.title} variant="h6" noWrap>
-              Água-Viva
-            </Typography>
-            <div className={classes.search}>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
-              </div>
-              <InputBase
-                placeholder="Search…"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
-                inputProps={{ 'aria-label': 'search' }}
-              />
-            </div>
-            <div className={classes.grow} />
-            <div className={classes.sectionDesktop}>
-              <IconButton aria-label="show 4 new mails" color="inherit">
-                <Badge badgeContent={0} color="secondary">
-                  <MailIcon />
-                </Badge>
-              </IconButton>
-              <IconButton aria-label="show 17 new notifications" color="inherit">
-                <Badge badgeContent={0} color="secondary">
-                  <NotificationsIcon />
-                </Badge>
-              </IconButton>
-              <IconButton
-                edge="end"
-                aria-label="account of current user"
-                aria-controls={menuId}
-                aria-haspopup="true"
-                onClick={handleProfileMenuOpen}
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
-            </div>
-            <div className={classes.sectionMobile}>
-              <IconButton
-                aria-label="show more"
-                aria-controls={mobileMenuId}
-                aria-haspopup="true"
-                onClick={handleMobileMenuOpen}
-                color="inherit"
-              >
-                <MoreIcon />
-              </IconButton>
-            </div>
-          </Toolbar>
-        </AppBar>
-        {renderMobileMenu}
-        {renderMenu}
-      </div>
-  }
-  return (
-    <>
-      {navbarComponent}
-    </>
-  );
+    if(token !== ""){
+        navbarComponent = <AppBar position="static" className="barColor">
+        <Toolbar variant="dense">
+        <img src="https://i.imgur.com/JWDBXKj.png[/img]"/>
+            <Box display="flex" justifyContent="start">
+                <Link to="/home" className='text-decorator-none'>
+                <Box mx={1} className='cursor'>
+                    <Typography variant="h6" className='barText'>
+                        Home
+                    </Typography>
+                </Box>
+                </Link>
+                <Link to="/about-us" className='text-decorator-none'>
+                <Box mx={1} className='cursor'>
+                    <Typography variant="h6" className='barText'>
+                        Sobre Nós
+                    </Typography>
+                </Box>
+                </Link>
+                <Link to="/temas" className='text-decorator-none'>
+                <Box mx={1} className='cursor'>
+                    <Typography variant="h6" className='barText'>
+                        Temas
+                    </Typography>
+                </Box>
+                </Link>
+                <Link to="/formularioTema" className='text-decorator-none'>
+                <Box mx={1} className='cursor'>
+                    <Typography variant="h6" className='barText'>
+                        Cadastrar tema
+                    </Typography>
+                </Box>
+                </Link>
+                <Link to="/contato" className='text-decorator-none'>
+                <Box mx={1} className='cursor'>
+                    <Typography variant="h6" className='barText'>
+                        Contato
+                    </Typography>
+                </Box>
+                </Link>
+            </Box>
+            <Box mx={1} className='cursor' onClick={goLogout} display="flex" justifyContent="end">
+                        <Typography variant="h6" className='barLogout'>
+                            Logout
+                        </Typography>
+                    </Box>
+        </Toolbar>
+    </AppBar>
+    }
+    return (
+        <>
+            {navbarComponent}
+        </>
+    )
 }
+
+export default Navbar;
