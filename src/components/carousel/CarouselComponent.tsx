@@ -18,7 +18,7 @@ function CarouselComponent() {
             {
                 items.map(item => (
                     <>
-                        <img src={item.img} alt="Item" className='imagem' />
+                        <img src={item.img} alt="Item" className='imagens' />
                     </>
                 ))
             }
