@@ -102,7 +102,7 @@ export default function Contato() {
                   Cancelar
                 </Button>
               </Link>
-              <Button type="submit" variant="contained" style={{backgroundColor: "#673AB7", color: "white", borderColor: "white"}}className="bntE">
+              <Button type="submit" variant="contained" style={{backgroundColor: "#673AB7", color: "white"}}className="bntE">
                 Enviar
               </Button>
             </Box>
