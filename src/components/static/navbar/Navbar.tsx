@@ -1,12 +1,12 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, Box, Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
-import './Navbar.css'
+import './Navbar.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/TokensReducer';
 import { addToken } from '../../../store/tokens/Actions';
-import {toast} from 'react-toastify'
+import {toast} from 'react-toastify';
 
 function Navbar() {
 
@@ -34,54 +34,61 @@ function Navbar() {
     var navbarComponent;
 
     if(token !== ""){
-        navbarComponent = <AppBar position="static" className="barColor">
-        <Toolbar variant="dense">
-        <Link to="/home" className='text-decorator-none'>
-        <img src="https://i.imgur.com/JWDBXKj.png[/img]"/>
-        </Link>
-            <Box display="flex" justifyContent="start">
-                <Link to="/home" className='text-decorator-none'>
-                <Box mx={1} className='cursor'>
-                    <Typography variant="h6" className='barText'>
-                        Home
-                        
-                   </Typography>
-                </Box>
-                </Link>
-                <Link to="/about-us" className='text-decorator-none'>
-                <Box mx={1} className='cursor'>
-                    <Typography variant="h6" className='barText'>
-                        Sobre Nós
-                    </Typography>
-                </Box>
-                </Link>
-                <Link to="/temas" className='text-decorator-none'>
-                <Box mx={1} className='cursor'>
-                    <Typography variant="h6" className='barText'>
-                        Temas
-                    </Typography>
-                </Box>
-                </Link>
-                <Link to="/formularioTema" className='text-decorator-none'>
-                <Box mx={1} className='cursor'>
-                    <Typography variant="h6" className='barText'>
-                        Cadastrar tema
-                    </Typography>
-                </Box>
-                </Link>
-                <Link to="/contato" className='text-decorator-none'>
-                <Box mx={1} className='cursor'>
-                    <Typography variant="h6" className='barText'>
-                        Contato
-                    </Typography>
-                </Box>
-                </Link>
-            </Box>
-            <Box mx={1} className='cursor' onClick={goLogout} display="flex" justifyContent="end">
-                        <Typography variant="h6" className='barLogout'>
-                            Logout
-                        </Typography>
-                    </Box>
+        navbarComponent = 
+        
+        <AppBar position="static" className="barColor">
+            <Toolbar variant="dense">
+                <img src="https://i.imgur.com/JWDBXKj.png[/img]"/>
+
+
+                    <Grid item xs={10}>
+                        <Box display="flex" justifyContent="start">
+            
+                            <Link to="/home" className='text-decorator-none'>
+                            <Box mx={2} className='cursor'>
+                                <Typography variant="h6" className='barText'>
+                                    Home
+                                </Typography>
+                            </Box>
+                            </Link>
+                            <Link to="/about-us" className='text-decorator-none'>
+                            <Box mx={2} className='cursor'>
+                                <Typography variant="h6" className='barText'>
+                                    Sobre Nós
+                                </Typography>
+                            </Box>
+                            </Link>
+                            <Link to="/temas" className='text-decorator-none'>
+                            <Box mx={2} className='cursor'>
+                                <Typography variant="h6" className='barText'>
+                                    Temas
+                                </Typography>
+                            </Box>
+                            </Link>
+                            <Link to="/formularioTema" className='text-decorator-none'>
+                            <Box mx={2} className='cursor'>
+                                <Typography variant="h6" className='barText'>
+                                    Cadastrar tema
+                                </Typography>
+                            </Box>
+                            </Link>
+                            <Link to="/contato" className='text-decorator-none'>
+                            <Box mx={2} className='cursor'>
+                                <Typography variant="h6" className='barText'>
+                                    Contato
+                                </Typography>
+                            </Box>
+                            </Link>
+                        </Box>
+                    </Grid>
+                    <Grid item xs={2}>
+                        <Box  className='cursor' onClick={goLogout} display="flex" justifyContent="end">
+                            <Typography variant="h6" className='barLogout'>
+                                Logout
+                            </Typography>
+                        </Box>    
+                    </Grid>
+          
         </Toolbar>
     </AppBar>
     }

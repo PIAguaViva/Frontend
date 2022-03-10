@@ -18,9 +18,14 @@
 
 .barText{
     color: white!important;
+    flex-direction: row;
 }
 
 .barLogout{
    color: white;
 
+}
+
+.direction{
+    flex-direction: row;
 }

@@ -16,7 +16,7 @@
 
   .titulo2{
       color: white;
-      margin-top: 200px;
+      display: flex;
   }
 
   .maps{
@@ -29,8 +29,9 @@
 
   }
 
-  .titulo3{
-    margin-top: 80px;
+  .caixaTitulo{
+    margin-top: 100px;
+
 }
   
 .btnE{
