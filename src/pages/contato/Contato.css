@@ -35,7 +35,10 @@
 }
   
 .btnE{
-  background-color: #673AB7;
+  border-color: white !important;
+  background-color: #673AB7!important;
+  color: white !important;;
+
 }
 
   

@@ -88,7 +88,7 @@ function Login() {
             </Box>
 
             <Box marginTop={10} textAlign='center'>
-              <Button className='button' type='submit' variant='contained' >Logar</Button>
+              <Button className='botaoo' type='submit' variant='contained' >Logar</Button>
             </Box>
           </form>
           <Box display='flex' justifyContent='center' marginTop={2}>

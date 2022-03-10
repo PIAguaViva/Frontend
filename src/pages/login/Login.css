@@ -60,3 +60,9 @@
   background: url(../../assets/img/bgl.PNG);
   background-size: cover;
 }
+
+.botaoo{
+  border-color: white !important;
+  background-color: #673AB7!important;
+  color: white !important;
+}
