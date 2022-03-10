@@ -7,3 +7,8 @@
   background: linear-gradient(36deg, #1a71a490 8%, #ce455e90 89%)!important;
   height: 120px!important;
 }
+
+.text-decorator-none{
+  text-decoration: none;
+  color: aliceblue;
+}

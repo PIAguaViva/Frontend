@@ -66,13 +66,13 @@ function Login() {
   }
 
   return (
-    <Grid container>
+    <Grid container className="bgl">
 
       <Box className='caixaMain'>
         <Box className='caixaLog'>
           <form onSubmit={onSubmit} className='form'>
             <Typography className='form-title' variant='h4'>Entrar</Typography>
-            <Box>
+             <Box>
               <TextField className='form-input' value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                 id="usuario"
                 label="usuário"

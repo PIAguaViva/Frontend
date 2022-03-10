@@ -32,7 +32,7 @@ function Footer (){
                     <Typography variant="subtitle2" align="center" gutterBottom >© 2022 Copyright:</Typography>
                 </Box>
                 <Box>
-                    <a target="_blank" href="https://github.com/PIAguaViva">
+                    <a target="_blank" href="https://github.com/PIAguaViva" className='text-decorator-none'>
                         <Typography variant="subtitle2" gutterBottom align="center">Água Viva</Typography>
                     </a>
                 </Box>

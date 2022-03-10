@@ -5,11 +5,12 @@ import './CarouselComponent.css'
 
 function CarouselComponent() {
     var items = [
-        { img: "https://i.imgur.com/bIhTBKQ.png" },
-        { img: "https://i.imgur.com/TIf8Rdk.png" },
-        { img: "https://i.imgur.com/eqUASVe.png" },
-        { img: "https://i.imgur.com/un7FAp7.png" },
-        { img: "https://i.imgur.com/r1hKlAa.png"}
+        {img: "https://i.imgur.com/X7TDfMB.png"},
+        { img: "https://i.imgur.com/SjpWyzr.png" },
+        { img: "https://i.imgur.com/yRTACsa.png?1" },
+        { img: "https://i.imgur.com/fAryJf2.png?1" },
+        { img: "https://i.imgur.com/aKlc2uw.png?3" },
+        { img: "https://i.imgur.com/ubqwjxe.png?2"}
         // { img: { arcane } } // 
     ]
 

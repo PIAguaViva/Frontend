@@ -36,13 +36,16 @@ function Navbar() {
     if(token !== ""){
         navbarComponent = <AppBar position="static" className="barColor">
         <Toolbar variant="dense">
+        <Link to="/home" className='text-decorator-none'>
         <img src="https://i.imgur.com/JWDBXKj.png[/img]"/>
+        </Link>
             <Box display="flex" justifyContent="start">
                 <Link to="/home" className='text-decorator-none'>
                 <Box mx={1} className='cursor'>
                     <Typography variant="h6" className='barText'>
                         Home
-                    </Typography>
+                        
+                   </Typography>
                 </Box>
                 </Link>
                 <Link to="/about-us" className='text-decorator-none'>

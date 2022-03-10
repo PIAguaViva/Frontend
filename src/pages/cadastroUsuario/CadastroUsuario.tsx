@@ -6,6 +6,11 @@ import './CadastroUsuario.css';
 import { cadastroUsuario } from '../../services/Service';
 import User from '../../models/User';
 import { toast } from 'react-toastify';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+
+
 
 function CadastroUsuario() {
     let history = useHistory();
@@ -76,6 +81,7 @@ function CadastroUsuario() {
         }
     }
 
+
     return (
         (
             <Grid container className='LogBG2'>
@@ -87,13 +93,14 @@ function CadastroUsuario() {
                     </Box>
                     <Box className='caixaCad'>
                         <form onSubmit={onSubmit} className='formCad' >
+
                             <Typography variant='h4' className='titleCad'>Cadastrar</Typography>
-                            <TextField value={user.tipoUsuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                                id='tipoUsuario'
-                                label='tipoUsuario'
-                                name='tipoUsuario'
-                                margin='normal'
-                                required />
+                            <Box className='tipo'>
+                            <RadioGroup  row  id='tipoUsuario'name='tipoUsuario' aria-label="tipoUsuario" value={user.tipoUsuario} onChange={(e: React.ChangeEvent<HTMLInputElement>) => updatedModel(e)}>
+                                <FormControlLabel value="aluno" control={<Radio />} label="Aluno" />
+                                <FormControlLabel value="professor" control={<Radio />} label="Professor" />
+                            </RadioGroup>
+                            </Box>
 
                             <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                                 id='nome'
@@ -102,6 +109,7 @@ function CadastroUsuario() {
                                 margin='normal'
                                 required />
 
+                            
                             <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                                 id='usuario'
                                 label='usuario'
@@ -125,13 +133,15 @@ function CadastroUsuario() {
                                 type='password'
                                 required placeholder='Mínimo 8 caracteres' />
 
+
+
                             <Box marginTop={2} textAlign='center'>
                                 <Link to='/login' className='text-decorator-none'>
                                     <Button variant='contained' color='secondary' className='btnCancelar'>
                                         Cancelar
                                     </Button>
                                 </Link>
-                                <Button type='submit' variant='contained' color='primary'>
+                                <Button type='submit' variant='contained' color='primary' className='bnt07'>
                                     Cadastrar
                                 </Button>
                             </Box>

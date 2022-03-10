@@ -55,3 +55,7 @@
   font-weight: bold;
   color: black;
 }
+
+.bgl{
+  background: url(../../assets/img/bgl.PNG);
+}

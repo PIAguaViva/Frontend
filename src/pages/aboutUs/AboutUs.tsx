@@ -54,7 +54,7 @@ function AboutUs() {
             <Grid item xs={3} className='alinhar'>
               <div id="passar_mouse">
                 <img src="https://i.imgur.com/aFMXsKS.png" width="150" height="150" />
-                <div id="mostrar">Sabrina Moura Gandra, 21 anos residente de Guarulhos, gosta de pinta quadros e ir ao teatro/cinema, é estudante de Análise e Desenvolvimento de Sistemas. Ingressou na área de tecnologia recentemente motivada pela curiosidade e objetivo de proporcionar uma melhor experiêcia ao cliente.</div></div>
+                <div id="mostrar">Sabrina Moura Gandra, 21 anos, interessada por arte adora ir ao teatro/cinema. É estudante de Análise e Desenvolvimento de Sistemas e recém formada Desenvolvedora Java Full Stack pela Generation. Sue interesse pela tecnologia surgiu através da sua curiosidade e vontade de aprender.</div></div>
             </Grid>
             <Grid item xs={3} className='alinhar'>
               <div id="passar_mouse">

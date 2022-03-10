@@ -102,7 +102,7 @@ function CadastroTema() {
   
     return (
         <Container maxWidth="sm" className="topo">
-            <form className='form' onSubmit={onSubmit}>
+            <form className='formtema' onSubmit={onSubmit}>
                 <Typography className='topo2' variant="h4" component="h3" align="center" >Cadastre um Tema</Typography>
                
                 <TextField  value={tema.tema} 

@@ -9,6 +9,11 @@
 .botao{
   background-color: #85ADC9!important;
 }
+
+.btn07{
+  background-color: #673AB7;
+}
+
 .caixaMain{
   display: flex;
   justify-content: center;
@@ -45,4 +50,12 @@
 
 .titleCad{
   font-weight: bold!important;
+}
+
+.tipo{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 20%;
 }
