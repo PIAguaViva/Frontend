@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/TokensReducer';
 import { addToken } from '../../../store/tokens/Actions';
 import {toast} from 'react-toastify';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 function Navbar() {
 
@@ -84,7 +85,7 @@ function Navbar() {
                     <Grid item xs={2}>
                         <Box  className='cursor' onClick={goLogout} display="flex" justifyContent="end">
                             <Typography variant="h6" className='barLogout'>
-                                Logout
+                            <ExitToAppIcon style={{ fontSize: 30, color: "white", marginTop:10}}/>
                             </Typography>
                         </Box>    
                     </Grid>

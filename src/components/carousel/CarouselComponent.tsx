@@ -15,7 +15,7 @@ function CarouselComponent() {
     ]
 
     return (
-        <Carousel isRTL={false}>
+        <Carousel isRTL={false} enableAutoPlay autoPlaySpeed={6000}>
             {
                 items.map(item => (
                     <>
