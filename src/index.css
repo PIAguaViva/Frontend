@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url(./assets/img/the_pink_ocean_display.jpg);
   background-repeat: no-repeat;
+  background-size: cover;
 
 }
 

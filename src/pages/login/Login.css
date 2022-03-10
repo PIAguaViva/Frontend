@@ -58,4 +58,5 @@
 
 .bgl{
   background: url(../../assets/img/bgl.PNG);
+  background-size: cover;
 }

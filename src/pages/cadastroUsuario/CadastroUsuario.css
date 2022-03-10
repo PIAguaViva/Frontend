@@ -59,3 +59,9 @@
   margin-top: 20px;
   margin-left: 20%;
 }
+
+.logBG2{
+    background: url(../../assets/img/bgl.PNG);
+    background-size: cover;
+
+}

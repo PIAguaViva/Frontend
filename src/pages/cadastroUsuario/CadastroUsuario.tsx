@@ -84,7 +84,7 @@ function CadastroUsuario() {
 
     return (
         (
-            <Grid container className='LogBG2'>
+            <Grid container className='logBG2'>
 
                 <Box className='caixaMain'>
                     <Box className='cadastroBG'>
