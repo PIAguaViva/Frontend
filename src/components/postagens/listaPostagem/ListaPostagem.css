@@ -1,3 +1,9 @@
 .text-decorator-none{
   text-decoration: none;
 }
+
+.space-text{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  letter-spacing: 1px !important;
+}

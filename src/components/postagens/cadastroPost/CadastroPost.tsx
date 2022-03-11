@@ -7,7 +7,7 @@ import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/TokensReducer';
-import { toast } from 'react-toastify';
+import { toast } from 'react-toastify'
 
 function CadastroPost() {
     let history = useHistory();
@@ -134,14 +134,14 @@ function CadastroPost() {
 
     return (
         <Container maxWidth="sm" className="topo">
-            <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Poste Aqui!</Typography>
+            <form className='formtema' onSubmit={onSubmit}>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" className='background-label'>Poste Aqui!</Typography>
                 <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
                 <TextField value={postagem.regiao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="regiao" label="regiao" variant="outlined" name="regiao" margin="normal" fullWidth />
                 <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
 
-                <FormControl >
-                    <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
+                <FormControl>
+                    <InputLabel id="demo-simple-select-helper-label" className='background-label'>Tema </InputLabel>
                     <Select
                         labelId="demo-simple-select-helper-label"
                         id="demo-simple-select-helper"
@@ -152,11 +152,11 @@ function CadastroPost() {
                         })}>
                         {
                             temas.map(tema => (
-                                <MenuItem value={tema.id}>{tema.descricao}</MenuItem>
+                                <MenuItem value={tema.id}>{tema.tema}</MenuItem>
                             ))
                         }
                     </Select>
-                    <FormHelperText>Escolha um tema para a postagem</FormHelperText>
+                    <FormHelperText className='background-label'>Escolha um tema para a postagem</FormHelperText>
                     <Button type="submit" variant="contained" color="primary" className='botaoo'>
                         Finalizar
                     </Button>

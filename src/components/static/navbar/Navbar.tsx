@@ -39,9 +39,9 @@ function Navbar() {
         
         <AppBar position="static" className="barColor">
             <Toolbar variant="dense">
+                <Link to="/home">
                 <img src="https://i.imgur.com/JWDBXKj.png[/img]"/>
-
-
+                </Link>
                     <Grid item xs={10}>
                         <Box display="flex" justifyContent="start">
             

@@ -63,11 +63,12 @@ function ListaPostagem() {
                 <Typography variant="body2" component="p">
                   {post.regiao}
                 </Typography>
-                <Typography variant="body2" component="p">
+                <Typography variant="body1" component="p" className='space-text'>
                   {post.texto}
                 </Typography>
+                
                 <Typography variant="body2" component="p">
-                  {post.tema?.descricao}
+                 Tema: {post.tema?.tema}
                 </Typography>
               </CardContent>
               <CardActions>
