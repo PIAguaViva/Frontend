@@ -3,12 +3,6 @@
     /* background: url(../../../assets/img/bgl.PNG); */
 }
 
-.makeStyles-paper-35{
-    background: linear-gradient(36deg, #1a71a490 8%, #ce455e90 89%)!important;
-    border-radius: 20px !important;
-    border-color: white !important;
-}
-
 .background-label{
-    color: white!important;
+    color: black!important;
 }
