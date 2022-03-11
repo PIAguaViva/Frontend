@@ -63,7 +63,7 @@ function AboutUs() {
             </Grid>
             <Grid item xs={3} className='alinhar'>
               <div id="passar_mouse">
-                <img src="https://i.imgur.com/srrPksO.png" width="150" height="150" />
+                <img src="https://i.imgur.com/UKvUkC8.png" width="150" height="150" />
                 <div id="mostrar">Olá! Eu sou a Vicky, tenho 23 anos e sou extremamente curiosa, brincalhona, calma e que gosta de ajudar. Tenho uma enorme paixão por tecnologia e trabalhar nesse projeto, além de aumentar isso, me proporcionou adquirir habilidades e conhecimentos, que com certeza me ajudarão nessa nova jornada!</div></div>
             </Grid>
           </Grid>

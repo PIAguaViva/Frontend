@@ -23,13 +23,10 @@
 }
 
 .sobre{
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
     text-align:left;
     padding-bottom: 25px;
     padding-top: 20px;
-    color: #1a71a490;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #ffffffc9;
+    color: white;
 }
 
 
@@ -72,7 +69,5 @@
 }
 
 .time{
-    color: #1a71a490;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #ffffffc9;
+    color: white;
 }
