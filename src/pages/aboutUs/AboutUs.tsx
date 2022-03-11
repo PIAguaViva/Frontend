@@ -20,7 +20,7 @@ function AboutUs() {
             </Grid>
 
             <Grid item xs={3}>
-              <img src="https://i.imgur.com/67gjgkw.png" width="170" height="170" className='imagem' />
+              <img src="https://i.imgur.com/I78goyc.png" width="170" height="170" className='imagem' />
             </Grid>
 
           </Grid>
