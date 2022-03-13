@@ -5,6 +5,7 @@ interface Postagem{
     titulo: string;
     regiao: string;
     texto: string;
+    foto: string;
     tema?: Tema| null
 }
 

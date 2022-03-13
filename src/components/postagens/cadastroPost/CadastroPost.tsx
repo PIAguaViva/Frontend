@@ -6,14 +6,14 @@ import Tema from '../../../models/Tema';
 import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/TokensReducer';
+import { UserState } from '../../../store/tokens/UserReducer';
 import { toast } from 'react-toastify'
 
 function CadastroPost() {
     let history = useHistory();
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([])
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     )
 
@@ -45,6 +45,7 @@ function CadastroPost() {
         titulo: '',
         regiao: '',
         texto: '',
+        foto: '',
         tema: null
     })
 
@@ -139,6 +140,8 @@ function CadastroPost() {
                 <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
                 <TextField value={postagem.regiao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="regiao" label="regiao" variant="outlined" name="regiao" margin="normal" fullWidth />
                 <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+                <TextField value={postagem.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
+                 id="foto" label="foto" variant="outlined" name="foto" margin="normal" fullWidth />
 
                 <FormControl>
                     <InputLabel id="demo-simple-select-helper-label" className='background-label'>Tema </InputLabel>

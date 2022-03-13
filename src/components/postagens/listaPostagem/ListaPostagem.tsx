@@ -6,12 +6,12 @@ import { Box, Card, CardActions, CardContent, Button, Typography } from '@materi
 import './ListaPostagem.css';
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/TokensReducer';
+import { UserState } from '../../../store/tokens/UserReducer';
 import { toast } from 'react-toastify';
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
 )
   let history = useHistory();
@@ -65,6 +65,9 @@ function ListaPostagem() {
                 </Typography>
                 <Typography variant="body1" component="p" className='space-text'>
                   {post.texto}
+                </Typography>
+                <Typography variant="body1" component="p" className='space-text'>
+                <img src={post.foto} />
                 </Typography>
                 
                 <Typography variant="body2" component="p">

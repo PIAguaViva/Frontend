@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import './Navbar.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/TokensReducer';
+import { UserState } from '../../../store/tokens/UserReducer';
 import { addToken } from '../../../store/tokens/Actions';
 import {toast} from 'react-toastify';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 function Navbar() {
 
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     )
     let history = useHistory();
@@ -52,6 +52,13 @@ function Navbar() {
                                 </Typography>
                             </Box>
                             </Link>
+                            <Link to="/feed" className='text-decorator-none'>
+                            <Box mx={2} className='cursor'>
+                                <Typography variant="h6" className='barText'>
+                                    Feed
+                                </Typography>
+                            </Box>
+                            </Link>
                             <Link to="/about-us" className='text-decorator-none'>
                             <Box mx={2} className='cursor'>
                                 <Typography variant="h6" className='barText'>
@@ -59,7 +66,7 @@ function Navbar() {
                                 </Typography>
                             </Box>
                             </Link>
-                            <Link to="/temas" className='text-decorator-none'>
+                            {/* <Link to="/temas" className='text-decorator-none'>
                             <Box mx={2} className='cursor'>
                                 <Typography variant="h6" className='barText'>
                                     Temas
@@ -72,7 +79,7 @@ function Navbar() {
                                     Cadastrar tema
                                 </Typography>
                             </Box>
-                            </Link>
+                            </Link> */}
                             <Link to="/contato" className='text-decorator-none'>
                             <Box mx={2} className='cursor'>
                                 <Typography variant="h6" className='barText'>

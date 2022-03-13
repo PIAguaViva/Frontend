@@ -21,7 +21,8 @@ function CadastroUsuario() {
             tipoUsuario: '',
             nome: '',
             usuario: '',
-            senha: ''
+            senha: '',
+            foto: ''
         })
 
     const [userResult, setUserResult] = useState<User>(
@@ -30,7 +31,8 @@ function CadastroUsuario() {
             tipoUsuario: '',
             nome: '',
             usuario: '',
-            senha: ''
+            senha: '',
+            foto: ''
         })
 
     useEffect(() => {
@@ -132,6 +134,13 @@ function CadastroUsuario() {
                                 margin='normal'
                                 type='password'
                                 required placeholder='Mínimo 8 caracteres' />
+
+                            <TextField value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                                id='foto'
+                                label='foto'
+                                name='foto'
+                                margin='normal'
+                                 />
 
 
 

@@ -5,15 +5,16 @@ import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostage
 import './Home.css';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
-import { TokenState } from '../../store/tokens/TokensReducer';
+import { UserState } from '../../store/tokens/UserReducer';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import CarouselComponent from '../../components/carousel/CarouselComponent';
 
+
 function Home() {
 
     let history = useHistory();
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     )
 
@@ -39,14 +40,6 @@ function Home() {
                     <Grid item xs={12}>
                         <CarouselComponent/>
                     </Grid>
-                    <Box display="flex" justifyContent="center" className='bot02'>
-                        <Box marginRight={15}>
-                            <ModalPostagem />
-                        </Box>
-                        <Link to='/posts' className='text-decorator-none'>
-                            <Button variant="outlined" className='botaoo'>Ver Postagens</Button>
-                        </Link>
-                    </Box>
                 </Grid>
         </>
     );

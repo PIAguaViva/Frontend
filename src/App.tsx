@@ -19,6 +19,7 @@ import { Provider } from 'react-redux';
 import store from './store/Store';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import Feed from './pages/feed/Feed';
 
 function App() {
   return (
@@ -70,6 +71,10 @@ function App() {
           </Route>
           <Route path='/deletarTema/:id'>
             <DeletarTema />
+          </Route>
+
+          <Route path='/feed'>
+            <Feed />
           </Route>
 
 
