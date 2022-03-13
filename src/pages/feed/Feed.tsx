@@ -64,17 +64,17 @@ function Feed() {
                         src={user.foto}
                         alt={user.nome}
                      />
-                        <Typography variant='h5'>{user.nome}</Typography>
-                    <Typography >{user.tipoUsuario}</Typography>
+                        <Typography className="txt-branco" variant='h5'>{user.nome}</Typography>
+                    <Typography className="txt-branco">{user.tipoUsuario}</Typography>
                     <Box className='info'>
                     <img src="https://i.imgur.com/ydP8spn.png[/img]" alt=""/>
-                    <Typography className='b01'>seguindo </Typography>
+                    <Typography className='b01 txt-branco'>seguindo </Typography>
                     <img src="https://i.imgur.com/GPMs0ej.png[/img]" alt=""/>
-                    <Typography className="b02">seguidores </Typography>
+                    <Typography className="b02 txt-branco">seguidores </Typography>
                     </Box>
                     <Box className="info">
-                        <Typography className='b03'>000</Typography>
-                        <Typography>000</Typography>
+                        <Typography className='b03 txt-branco'>000</Typography>
+                        <Typography className="txt-branco">000</Typography>
                     </Box>
                 </Box>
                 {/* <Box className='nomezinho'>
@@ -87,7 +87,7 @@ function Feed() {
             </Grid>
             <Grid xs={10} className='postagens' justifyContent="center" alignItems="center" >
                 <Box paddingX={20} justifyContent='center'>
-                    <Typography variant="h6" gutterBottom color="textPrimary" component="h6" align="center" >Comece uma nova publicação:</Typography>
+                    <Typography variant="h6" gutterBottom  component="h6" align="center" className="txt-branco" >Comece uma nova publicação:</Typography>
                     <Box display="flex" justifyContent="center">
                         <Box marginRight={1} className='botao' >
                             <ModalPostagem />

@@ -44,8 +44,6 @@
   border-radius: 30px;
   margin-top: 30px;
   margin-bottom: 30px;
-  
-  
 }
 
 .capa{
@@ -81,5 +79,6 @@
   color: #673AB7!important;
 }
 
-.iconeS{
- padding: };
+.txt-branco{
+  color: white;
+}
