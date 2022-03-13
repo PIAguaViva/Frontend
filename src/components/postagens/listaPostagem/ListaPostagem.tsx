@@ -127,6 +127,9 @@ function ListaPostagem() {
                 <Typography variant="body1" component="p" className='space-text'>
                   {post.texto}
                 </Typography>
+                <Typography variant="body1" component="p" className='space-text'>
+                <img src={post.foto} />
+                </Typography>
 
                 <Typography variant="body2" component="p">
                   Tema: {post.tema?.tema}
