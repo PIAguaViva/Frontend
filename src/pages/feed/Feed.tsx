@@ -77,9 +77,6 @@ function Feed() {
                         <Typography className="txt-branco">000</Typography>
                     </Box>
                 </Box>
-                {/* <Box className='nomezinho'>
-                
-                </Box> */}
                 
             </Grid>
             <Grid xs={6} className='capa'>
