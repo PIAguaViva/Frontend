@@ -156,7 +156,7 @@ function CadastroPost() {
                 <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
                 <TextField value={postagem.regiao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="regiao" label="regiao" variant="outlined" name="regiao" margin="normal" fullWidth />
                 <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
-                <TextField value={postagem.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
+                <TextField className='fotopost' value={postagem.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
                  id="foto" label="foto" variant="outlined" name="foto" margin="normal" fullWidth />
 
                 <FormControl>

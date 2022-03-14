@@ -15,3 +15,10 @@
   width: 65px !important;
   margin-right: 10px!important;
 }
+.btnDosIcones{
+  border-color:#673AB7 !important;
+  background-color: white !important;
+  color: #673AB7!important;
+  height:30px!important;
+  width: 20px!important;
+}

@@ -59,22 +59,30 @@ function Feed() {
     return (
         <Grid container justifyContent="center" >
             <Grid xs={4} className='card-principal' justifyContent="center" alignItems="center" >
-                <Box className='card-container-imagem'>
+                <Box className='card-container-imagem' display='flex' flexDirection="row">
                     <Avatar className='card-imagem'
                         src={user.foto}
                         alt={user.nome}
                      />
                         <Typography className="txt-branco" variant='h5'>{user.nome}</Typography>
                     <Typography className="txt-branco">{user.tipoUsuario}</Typography>
-                    <Box className='info'>
+
+                    <Box display='flex' flexDirection='row' alignItems='center' justifyContent='center'>
+                    <Box display='flex' flexDirection='column' width="50%" alignItems='center' justifyContent='center'>
+                    <Box display='flex' flexDirection='row'>
                     <img src="https://i.imgur.com/ydP8spn.png[/img]" alt=""/>
                     <Typography className='b01 txt-branco'>seguindo </Typography>
-                    <img src="https://i.imgur.com/GPMs0ej.png[/img]" alt=""/>
+                    </Box>
+                    <Typography className='b03 txt-branco'>000</Typography>
+                    
+                    </Box>
+                    <Box display='flex' flexDirection='column' alignItems='center' justifyContent='center'>
+                    <Box display='flex' flexDirection='row'>
+                    <img src="https://i.imgur.com/GPMs0ej.png[/img]" alt="" />
                     <Typography className="b02 txt-branco">seguidores </Typography>
                     </Box>
-                    <Box className="info">
-                        <Typography className='b03 txt-branco'>000</Typography>
                         <Typography className="txt-branco">000</Typography>
+                    </Box>
                     </Box>
                 </Box>
                 

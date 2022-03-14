@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Postagem from '../../../models/Postagem';
 import { busca } from '../../../services/Service'
-import { Box, Card, CardContent, Typography, MenuItem, IconButton } from '@material-ui/core';
+import { Box, Card, CardContent, Typography, MenuItem, IconButton, CardHeader, Avatar, Button } from '@material-ui/core';
 import './ListaPostagem.css';
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux';
@@ -10,6 +10,9 @@ import { toast } from 'react-toastify';
 import Menu from '@material-ui/core/Menu';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { UserState } from '../../../store/tokens/UserReducer';
+import NearMeOutlinedIcon from '@mui/icons-material/NearMeOutlined';
+import MarkChatReadOutlinedIcon from '@mui/icons-material/MarkChatReadOutlined';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
 
 function ListaPostagem() {
@@ -77,55 +80,56 @@ function ListaPostagem() {
             <Card variant="outlined">
               <CardContent>
 
-                <Box display='row' justifyContent='flex' >
-                   
-               
-                 <Box display="flex" justifyContent="end">              
-                 <IconButton 
-                    aria-label="more"
-                    aria-controls="long-menu"
-                    aria-haspopup="true"
-                    onClick={handleClick}
-                  >
-                    <MoreVertIcon />
-                  </IconButton>
-                  <Menu
-                    id="fade-menu"
-                    anchorEl={anchorEl}
-                    keepMounted
-                    open={open}
-                    onClose={handleClose}
+                <Box display='flex' justifyContent='space-between' >
+                <Typography color="textSecondary" gutterBottom>
+                    Postagens
+                  </Typography>
 
-                  >
-                    <Link to={`/deletarPostagem/${post.id}`} className='none'>
-                      <MenuItem onClick={handleClose}>deletar</MenuItem>
-                    </Link>
-                    <Link to={`/formularioPostagem/${post.id}`} className="none" >
-                      <MenuItem onClick={handleClose}>atualizar</MenuItem>
-                    </Link>
+                  <Box display="flex" justifyContent="space-between">
+                  
 
-                  </Menu>
-                  </Box> 
-                  
-              </Box>
-              <Box>
-                  
-                   <Typography color="textSecondary" gutterBottom>
-                  Postagens
-                </Typography>
+                    <IconButton
+                      aria-label="more"
+                      aria-controls="long-menu"
+                      aria-haspopup="true"
+                      onClick={handleClick}
+                    >
+                      <MoreVertIcon />
+                    </IconButton>
+                    <Menu
+                      id="fade-menu"
+                      anchorEl={anchorEl}
+                      keepMounted
+                      open={open}
+                      onClose={handleClose}
+
+                    >
+                      <Link to={`/deletarPostagem/${post.id}`} className='none'>
+                        <MenuItem onClick={handleClose}>deletar</MenuItem>
+                      </Link>
+                      <Link to={`/formularioPostagem/${post.id}`} className="none" >
+                        <MenuItem onClick={handleClose}>atualizar</MenuItem>
+                      </Link>
+
+                    </Menu>
+                  </Box>
 
                 </Box>
-                
+                <Box>
+
+                </Box>
+
                 <Box display='flex' justifyContent='row'>
-                <Typography variant='body2' component='p'>
-                  <img className='userFoto' src={post.usuario?.foto}></img>
-                </Typography>
-                <Typography variant="h5" component="p">
-                {post.usuario?.nome}
-                </Typography>
-                
+                  <CardHeader
+                    avatar={
+                      <Avatar src={post.usuario?.foto} alt={post.usuario?.nome}>
+                      </Avatar>
+                    }
+                    title={post.usuario?.nome}
+                  />
+
                 </Box>
-                <hr></hr>
+
                 <Typography variant="h5" component="h2">
                   {post.titulo}
                 </Typography>
@@ -136,14 +140,31 @@ function ListaPostagem() {
                   {post.texto}
                 </Typography>
                 <Typography variant="body1" component="p" className='space-text'>
-                <img src={post.foto} />
+                  <img src={post.foto} />
                 </Typography>
 
                 <Typography variant="body2" component="p">
                   Tema: {post.tema?.tema}
                 </Typography>
+                <Box display="flex" justifyContent="center" >
+                  <Box mx={1}>
+                    <Button variant="contained" size='small' className="btnDosIcones">
+                      <FavoriteBorderOutlinedIcon fontSize='large' />
+                    </Button>
+                  </Box>
+                  <Box mx={1}>
+                    <Button variant="contained" size='small' className="btnDosIcones">
+                      <MarkChatReadOutlinedIcon fontSize='large' />
+                    </Button>
+                  </Box>
+                  <Box mx={1}>
+                    <Button variant="contained" size='small' className="btnDosIcones">
+                      <NearMeOutlinedIcon fontSize='large' />
+                    </Button>
+                  </Box>
+                </Box>
 
-                
+
 
               </CardContent>
             </Card>
