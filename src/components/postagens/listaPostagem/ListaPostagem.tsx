@@ -116,8 +116,16 @@ function ListaPostagem() {
 
                 </Box>
                 
-
-
+                <Box display='flex' justifyContent='row'>
+                <Typography variant='body2' component='p'>
+                  <img className='userFoto' src={post.usuario?.foto}></img>
+                </Typography>
+                <Typography variant="h5" component="p">
+                {post.usuario?.nome}
+                </Typography>
+                
+                </Box>
+                <hr></hr>
                 <Typography variant="h5" component="h2">
                   {post.titulo}
                 </Typography>
@@ -134,6 +142,8 @@ function ListaPostagem() {
                 <Typography variant="body2" component="p">
                   Tema: {post.tema?.tema}
                 </Typography>
+
+                
 
               </CardContent>
             </Card>

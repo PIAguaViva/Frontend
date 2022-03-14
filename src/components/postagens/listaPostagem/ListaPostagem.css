@@ -8,3 +8,10 @@
   text-decoration: none;
   color: black;
 }
+
+.userFoto{
+  border-radius: 50% !important;
+  height: 65px !important;
+  width: 65px !important;
+  margin-right: 10px!important;
+}

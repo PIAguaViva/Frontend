@@ -8,6 +8,7 @@ import { busca, buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/UserReducer';
 import { toast } from 'react-toastify'
+import User from '../../../models/User';
 
 function CadastroPost() {
     let history = useHistory();
@@ -34,6 +35,10 @@ function CadastroPost() {
         }
     }, [token])
 
+    const userId = useSelector<UserState, UserState["id"]>(
+        (state) => state.id
+    );
+
     const [tema, setTema] = useState<Tema>(
         {
             id: 0,
@@ -46,7 +51,17 @@ function CadastroPost() {
         regiao: '',
         texto: '',
         foto: '',
-        tema: null
+        tema: null,
+        usuario: null
+    })
+
+    const [user, setUser] = useState<User>({
+        id: +userId,    // Faz uma conversão de String para Number
+        nome: '',
+        tipoUsuario: '',
+        usuario: '',
+        senha: '',
+        foto: ''
     })
 
     useEffect(() => { 
@@ -84,7 +99,8 @@ function CadastroPost() {
         setPostagem({
             ...postagem,
             [e.target.name]: e.target.value,
-            tema: tema
+            tema: tema,
+            usuario: user
         })
 
     }
