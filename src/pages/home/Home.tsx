@@ -40,6 +40,12 @@ function Home() {
                     <Grid item xs={12}>
                         <CarouselComponent/>
                     </Grid>
+                <Box padding='20px'>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/M3WeYor43kY" 
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                </iframe>
+                </Box>
                 </Grid>
         </>
     );
