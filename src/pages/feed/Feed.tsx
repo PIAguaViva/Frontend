@@ -94,7 +94,7 @@ function Feed() {
                 <Box paddingX={20} justifyContent='center'>
                     <Typography variant="h6" gutterBottom  component="h6" align="center" className="txt-branco" >Comece uma nova publicação:</Typography>
                     <Box display="flex" justifyContent="center">
-                        <Box marginRight={1} className='botao' >
+                        <Box marginRight={1} className='btnModal' >
                             <ModalPostagem />
                         </Box>
                         <Box>
