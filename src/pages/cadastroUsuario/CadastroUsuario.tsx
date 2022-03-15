@@ -99,8 +99,8 @@ function CadastroUsuario() {
                             <Typography variant='h4' className='titleCad'>Cadastrar</Typography>
                             <Box className='tipo'>
                             <RadioGroup  row  id='tipoUsuario'name='tipoUsuario' aria-label="tipoUsuario" value={user.tipoUsuario} onChange={(e: React.ChangeEvent<HTMLInputElement>) => updatedModel(e)}>
-                                <FormControlLabel value="aluno" control={<Radio />} label="Aluno" />
-                                <FormControlLabel value="professor" control={<Radio />} label="Professor" />
+                                <FormControlLabel value="aluno" control={<Radio />} label="Aluno(a)" />
+                                <FormControlLabel value="professor" control={<Radio />} label="Professor(a)" />
                             </RadioGroup>
                             </Box>
 

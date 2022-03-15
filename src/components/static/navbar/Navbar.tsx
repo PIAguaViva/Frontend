@@ -48,14 +48,14 @@ function Navbar() {
                             <Link to="/home" className='text-decorator-none'>
                             <Box mx={2} className='cursor'>
                                 <Typography variant="h6" className='barText'>
-                                    Home
+                                    Página Inicial
                                 </Typography>
                             </Box>
                             </Link>
                             <Link to="/feed" className='text-decorator-none'>
                             <Box mx={2} className='cursor'>
                                 <Typography variant="h6" className='barText'>
-                                    Feed
+                                    Postagens
                                 </Typography>
                             </Box>
                             </Link>

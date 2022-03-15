@@ -24,3 +24,7 @@ code {
 *{
   font-family: Carton_Six!important;
 }
+
+body,html{
+  overflow-x: hidden;
+}

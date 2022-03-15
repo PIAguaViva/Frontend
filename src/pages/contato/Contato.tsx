@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
       "& > *": {
         margin: theme.spacing(1),
-        width: "60ch",
+        width: "80ch",
       },
     },
   })
@@ -49,15 +49,9 @@ export default function Contato() {
 
 
   return (
-    <Grid container direction="row" justifyContent="flex-end" alignItems="flex-end">
-
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d467692.0488661539!2d-46.87549743438984!3d-23.681531449872665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce448183a461d1%3A0x9ba94b08ff335bae!2zU8OjbyBQYXVsbywgU1A!5e0!3m2!1spt-BR!2sbr!4v1646775743647!5m2!1spt-BR!2sbr"
-        className='maps'></iframe>
-
-      <Grid item xs={6} alignItems="flex-start">
-
-        <Box paddingX={8} className='caixaTitulo'>
-          <Typography
+    <Grid container direction="row" justifyContent="center" alignItems="center" className='center-content'>
+      <Box display='flex' flexDirection='row' justifyContent='space-between' alignItems='center' textAlign='center' flexWrap='wrap'>
+      <Typography
             variant="h3"
             className="titulo2"
             component="h3"
@@ -66,33 +60,52 @@ export default function Contato() {
             Fale conosco
           </Typography>
 
-          <form onSubmit={enviar} className={classes.root} noValidate autoComplete="off">
-            <TextField
+        <Box justifyContent='center' alignItems='center' textAlign='center' width='42.5%'>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d467692.0488661539!2d-46.87549743438984!3d-23.681531449872665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce448183a461d1%3A0x9ba94b08ff335bae!2zU8OjbyBQYXVsbywgU1A!5e0!3m2!1spt-BR!2sbr!4v1646775743647!5m2!1spt-BR!2sbr"
+            className='maps'></iframe>
+        </Box>
+
+        <Box flexDirection='column' justifyContent='center' alignItems='center' textAlign='center' className='testMargin' width='47.5%'>
+          <Box flexDirection='column' justifyContent='center' alignItems='center' textAlign='center'>
+          <form action='https://formsubmit.co/projetointegradorgen@gmail.com' method='POST' className={classes.root + ' form-contato'}  noValidate>
+
+            <input type='hidden' name='_next' value='https://pi-agua-viva.vercel.app/'></input>
+            {/* <input type='hidden' name='_captcha' value='false'></input> */}
+            <input type='hidden' name='_autoresponse' value='Recebemos sua mensagem, obrigado pelo contato e logo responderemos!'></input>
+
+
+            <input
               className="caixaLog1"
-              id="outlined-multiline-flexible"
-              label="Nome"
-              multiline
-              maxRows={4}
-              variant="outlined"
+              type='text'
+              name='name'
+              placeholder="Nome"
+              required
             />
-            <TextField
+            <input
               className="caixaLog1"
-              id="outlined-multiline-static"
-              label="Email"
-              placeholder="user@email.com"
-              multiline
-              variant="outlined"
-            />
-            <TextField
-              className="caixaLog2"
-              id="outlined-textarea"
-              label="Assunto"
-              multiline
-              rows={4}
-              variant="outlined"
+              type='email'
+              name='email'
+              placeholder="E-mail"
+              required
+
             />
 
-            <Box marginTop={2} textAlign="center">
+            <input
+              className="caixaLog1"
+              type='text'
+              name='subject'
+              placeholder="Assunto"
+              required
+
+            />
+            <textarea
+              className="caixaLog2"
+              name='message'
+              placeholder='Mensagem'
+
+            />
+
+            <Box marginTop={2} textAlign="center" id='button-container'>
               <Link to="/home" className="text-decorator-none">
                 <Button
                   variant="contained"
@@ -102,13 +115,18 @@ export default function Contato() {
                   Cancelar
                 </Button>
               </Link>
-              <Button type="submit" variant="contained" style={{backgroundColor: "#673AB7", color: "white"}}className="bntE">
+
+              <Button type="submit" variant="contained" style={{ backgroundColor: "#673AB7", color: "white" }} className="bntE">
                 Enviar
               </Button>
+
             </Box>
           </form>
+          </Box>
         </Box>
-      </Grid>
+
+      </Box>
+
     </Grid>
   );
 }
